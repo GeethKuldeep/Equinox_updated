@@ -31,9 +31,9 @@ class _TeamState extends State<Team> {
   var docID = 'BtX9xm9ioncqthMpc6j5lZa86Of1';
 
   void getdata() async {
-    await Firestore.instance
+    await FirebaseFirestore.instance
         .collection('users')
-        .document('BtX9xm9ioncqthMpc6j5lZa86Of1')
+        .doc('BtX9xm9ioncqthMpc6j5lZa86Of1')
         .get()
         .then((DocumentSnapshot docSnapshot) => {
               teammate1 = docSnapshot.data()['Teammate1'],
@@ -226,7 +226,7 @@ class _TeamState extends State<Team> {
                   )
                 ],
               ),
-              SizedBox(height: 35),
+              SizedBox(height: 30),
               Center(
                 child: SizedBox(
                   width: 115,
