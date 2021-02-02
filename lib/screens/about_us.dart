@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Aboutus extends StatelessWidget {
+import '../constants.dart';
+
+class Aboutus extends StatefulWidget {
+  @override
+  _AboutusState createState() => _AboutusState();
+}
+
+class _AboutusState extends State<Aboutus> {
   var color1 = const Color(0xffE1D342);
+  bool isDarkMode = false;
   var color = const Color(0xff0E1C36);
+
+  void manageTheme() {
+    DateTime now = DateTime.now(); // current time
+    if (now.isAfter(DateTime(2020, 12, 18, 12, 30))) {
+      setState(() {
+        isDarkMode = !isDarkMode;
+      });
+    } else {}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +37,7 @@ class Aboutus extends StatelessWidget {
               Text('About us',
                   style: GoogleFonts.raleway(
                     fontSize: 40,
-                    color: Colors.white,
+                    color: isDarkMode ? darkBackground : Colors.white,
                   )),
               SizedBox(
                 height: 15,
@@ -244,7 +261,7 @@ class Aboutus extends StatelessWidget {
             ],
           ),
         ),
-        backgroundColor: color,
+        backgroundColor: isDarkMode ? lightBackground : darkBackground,
       ),
     );
   }
