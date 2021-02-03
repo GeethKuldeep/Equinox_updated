@@ -9,7 +9,7 @@ class Aboutus extends StatefulWidget {
 }
 
 class _AboutusState extends State<Aboutus> {
-  var color12 = const Color(0xffE1D342);
+  var color123 = const Color(0xffE1D342);
   bool isDarkMode = false;
   var color = const Color(0xff0E1C36);
 
